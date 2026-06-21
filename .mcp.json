@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rove": {
+      "command": "venv\\Scripts\\python.exe",
+      "args": ["-m", "rove.mcp_server"],
+      "env": {
+        "OPENAI_API_KEY": "${NVIDIA_API_KEY}",
+        "LOCAL_LLM_BASE_URL": "https://integrate.api.nvidia.com/v1"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rove"
+version = "0.1.0"
+description = "Autonomous web crawler that maps a site into a queryable interaction graph — including behind login."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "playwright>=1.45",
+    "playwright-stealth>=1.0.6",
+    "markdownify>=0.13",
+    "mcp>=1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+anthropic = ["anthropic>=0.39"]
+openai = ["openai>=1.40"]
+
+[project.scripts]
+rove = "rove.crawl:main_sync"
+rove-mcp = "rove.mcp_server:main"
+rove-diff = "rove.diff:main"
+
+[tool.setuptools.packages.find]
+include = ["rove*"]

@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><title>Fixture</title></head><body>
+  <a id="plain-link" href="#x">Plain link</a>
+  <iframe src="inner.html"></iframe>
+  <div id="shadow-host"></div>
+  <script>
+    const host = document.getElementById('shadow-host');
+    const root = host.attachShadow({mode: 'open'});
+    root.innerHTML = '<button id="shadow-btn">Shadow button</button>' +
+                     '<input name="shadow-input" placeholder="shadow field">';
+  </script>
+</body></html>
